@@ -1,0 +1,17 @@
+use sms;
+create table user(
+
+ id int(10) auto_increment primary_key,
+        name varchar(50),
+		email varchar(50),
+		mobile_number varchar(50),
+		city= varchar(50),
+		address varchar(50),
+		hindi varchar(50),
+		english varchar(50),
+		telugu varchar(50),
+		gender varchar(50),
+		image_path varchar(50)
+
+
+);

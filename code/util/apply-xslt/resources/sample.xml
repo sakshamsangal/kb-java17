@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Tove</to>
+    <from>
+        <note>
+            <to>Tove</to>
+            <from/>
+            <from    />
+            <heading />
+            <body>Don't forget me this weekend!</body>
+        </note>
+    </from>
+    <heading/>
+    <body>Don't forget me this weekend!</body>
+</note>
