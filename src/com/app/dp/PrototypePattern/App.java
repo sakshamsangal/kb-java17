@@ -1,4 +1,4 @@
-package com.app.dp.PrototypePattern.src.com.globalsoftwaresupport;
+package com.app.dp.PrototypePattern;
 
 public class App {
 

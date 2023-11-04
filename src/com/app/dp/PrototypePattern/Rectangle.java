@@ -1,4 +1,4 @@
-package com.app.dp.PrototypePattern.src.com.globalsoftwaresupport;
+package com.app.dp.PrototypePattern;
 
 public class Rectangle extends Shape {
 
@@ -14,6 +14,6 @@ public class Rectangle extends Shape {
 	@Override
 	public Shape cloneObject() {
 		// this is the prototype pattern
-		return new com.app.design_patt.design_patterns.FlyweightPattern.Rectangle(width, height);
+		return new Rectangle(width, height);
 	}	
 }

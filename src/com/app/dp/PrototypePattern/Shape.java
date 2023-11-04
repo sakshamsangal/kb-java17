@@ -1,4 +1,4 @@
-package com.app.dp.PrototypePattern.src.com.globalsoftwaresupport;
+package com.app.dp.PrototypePattern;
 
 public abstract class Shape {
 
@@ -11,5 +11,5 @@ public abstract class Shape {
 	}
 	
 	public abstract void draw();
-	public abstract com.app.design_patt.design_patterns.FlyweightPattern.Shape cloneObject();
+	public abstract Shape cloneObject();
 }
