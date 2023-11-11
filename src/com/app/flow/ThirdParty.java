@@ -7,6 +7,11 @@ public class ThirdParty {
         return null;
     }
 
-    public static void consumeGetXML() {
+    public static byte[] consumeGetXML() {
+        return new byte[0];
+    }
+
+    public static void consumePostJson() {
+
     }
 }

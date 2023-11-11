@@ -28,16 +28,23 @@ public class Sample7_58_29 {
 
                     try {
                         // target xml api
-                        ThirdParty.consumeGetXML();
+                        byte[] xml = ThirdParty.consumeGetXML();
+                        S3.save(xml);
+
                     } catch (Exception e) {
                         Db.update(); // ERR, TARGET_XML_FETCH_FAILED
                         Db.addEntry(); // history table
                         throw new RuntimeException(e);
                     }
 
-                    Util.xmlToJson();
-                    Db.update();
-                    S3.save();
+
+
+                    // fetch api
+                    ThirdParty.consumePostJson();
+
+                    Db.update(); // REC
+                    Db.addEntry(); // history table
+
                 }
 
             }
