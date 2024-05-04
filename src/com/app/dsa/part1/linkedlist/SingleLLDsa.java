@@ -180,8 +180,6 @@ public class SingleLLDsa {
         return list;
     }
 
-
-
     public static void main(String[] args) {
         SingleLLDsa listDsa = new SingleLLDsa();
 

@@ -429,6 +429,56 @@ public class BinaryTree {
         return head;
     }
 
+    ArrayList<Integer> Kdistance(Node root, int k) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        int level = 0;
+        while (!queue.isEmpty()) {
+            if (level == k) {
+                break;
+            }
+            int nodesPresentAtLevel = queue.size();
+            for (int i = 0; i < nodesPresentAtLevel; i++) {
+                Node poll = queue.poll();
+                if (Objects.nonNull(poll.left)) {
+                    queue.add(poll.left);
+                }
+                if (Objects.nonNull(poll.right)) {
+                    queue.add(poll.right);
+                }
+            }
+
+            level++;
+        }
+        ArrayList<Integer> list = new ArrayList<>();
+        for (Node node : queue) {
+            list.add(node.data);
+        }
+        return list;
+    }
+
+    public Node partition(int[] in, int[] post, int inLo, int inHi, int postLo, int postHi) {
+        if (inLo > inHi) {
+            return null;
+        }
+        Node rootNode = new Node(post[postHi]);
+
+        // search in inorder traversal
+        for (int i = inLo; i < inHi; i++) {
+            if (post[postHi] == in[i]) {
+                rootNode.left = partition(in, post, inLo, i - 1, postLo, postLo + i - inLo - 1);
+                rootNode.right = partition(in, post, i + 1, inHi, postHi - inHi + i, postHi - 1);
+                break;
+            }
+        }
+        return rootNode;
+    }
+
+    Node buildTree(int in[], int post[], int n) {
+        return partition(in, post, 0, n - 1, 0, n - 1);
+    }
+
     public static void main(String[] args) {
 
 //        TreeTraversal treeTraversal = new TreeTraversal();
