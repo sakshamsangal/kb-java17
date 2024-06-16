@@ -1,7 +1,6 @@
 package com.app.dsa.part2.dp;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Dp1D {
 
@@ -314,8 +313,8 @@ public class Dp1D {
         }
         int pick = totalWaysUtil(N, start + 2, dp);
         int skip = totalWaysUtil(N, start + 1, dp);
-        int m = (int) 1e9+7;
-        dp[start] = ((pick % m) + (skip % m))%m;
+        int m = (int) 1e9 + 7;
+        dp[start] = ((pick % m) + (skip % m)) % m;
         return dp[start];
     }
 
@@ -345,17 +344,32 @@ public class Dp1D {
         return numberSequenceUtil(m, n, 1);
     }
 
+    public void powerSet(String prev, String str, int lo, List<String> list) {
+
+        Set<String> set = new HashSet<>();
+        for (int i = lo; i < str.length(); i++) {
+            String ss = prev + str.charAt(i);
+
+            if (!set.contains(ss)) {
+                set.add(ss);
+                System.out.println(ss);
+                list.add(ss);
+                powerSet(ss, str, i + 1, list);
+            }
+        }
+    }
+
+    public List<String> AllPossibleStrings(String s) {
+        // Code here
+        List<String> list = new ArrayList<>();
+        powerSet("", s, 0, list);
+        Collections.sort(list);
+        return list;
+    }
+
     public static void main(String[] args) {
         Dp1D dp1D = new Dp1D();
-        int[] arr = {1, 2, 3};
-
-        int[] values = {2, 2, 3};
-        int[] weight = {4, 5, 1};
-        int i = dp1D.numberSequence(5, 2);
-        System.out.println("i = " + i);
-
-//        int i = dpDsa.knapSack(4, weight, values, weight.length);
-
+        dp1D.AllPossibleStrings("aa");
     }
 
 

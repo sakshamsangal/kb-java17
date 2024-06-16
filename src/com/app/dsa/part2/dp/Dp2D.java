@@ -252,42 +252,6 @@ public class Dp2D {
         return 0;
     }
 
-
-    public int knapSack(int W, int wt[], int val[], int n) {
-        int[][] dp = new int[n + 1][];
-        for (int i = 0; i < dp.length; i++) {
-            dp[i] = new int[W + 1];
-            Arrays.fill(dp[i], -1);
-        }
-        return knapSackUtil1(W, wt, val, dp, 0);
-    }
-
-    public int knapSackUtil(int W, int wt[], int val[], int n, int[][] dp) {
-
-        if (n == 0) {
-            return 0;
-        }
-
-        if (dp[n - 1][W] != -1) {
-            return dp[n - 1][W];
-        }
-
-        if (wt[n - 1] > W) {
-            dp[n - 1][W] = knapSackUtil(W, wt, val, n - 1, dp);
-            return dp[n - 1][W];
-        }
-
-        // pick
-        int pick = val[n - 1] + knapSackUtil(W - wt[n - 1], wt, val, n - 1, dp);
-
-        // skip
-        int skip = knapSackUtil(W, wt, val, n - 1, dp);
-
-        dp[n - 1][W] = Math.max(pick, skip);
-        return dp[n - 1][W];
-    }
-
-
     public int editDistanceUtil(String s, String t, int srcEnd, int trgEnd, int[][] dp) {
 
         if (srcEnd < 0) {
@@ -506,7 +470,7 @@ public class Dp2D {
     }
 
 
-    public int findTargetSumWaysUtil(int[] nums, int target, int start, Map<Map.Entry<Integer,Integer>, Integer> dp) {
+    public int findTargetSumWaysUtil(int[] nums, int target, int start, Map<Map.Entry<Integer, Integer>, Integer> dp) {
         if (start == nums.length) {
             if (target == 0) {
                 return 1;
@@ -514,7 +478,7 @@ public class Dp2D {
             return 0;
         }
 
-        Map.Entry<Integer,Integer> key = Map.entry(start,target);
+        Map.Entry<Integer, Integer> key = Map.entry(start, target);
         if (dp.containsKey(key)) {
             return dp.get(key);
         }
@@ -528,20 +492,8 @@ public class Dp2D {
     }
 
     public int findTargetSumWays(int[] nums, int target) {
-        Map<Map.Entry<Integer,Integer>, Integer> dp = new HashMap<>();
+        Map<Map.Entry<Integer, Integer>, Integer> dp = new HashMap<>();
         return findTargetSumWaysUtil(nums, target, 0, dp);
-    }
-
-    public static void main(String[] args) {
-        Dp2D dp2Dim = new Dp2D();
-        int[] arr = {1, 2, 3};
-
-        int[] values = {1, 2, 3};
-        int[] weight = {4, 5, 1};
-
-        int i = dp2Dim.knapSack(4, weight, values, weight.length);
-        System.out.println("i = " + i);
-
     }
 
 
