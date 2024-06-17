@@ -314,8 +314,8 @@ public class Dp1D {
         }
         int pick = totalWaysUtil(N, start + 2, dp);
         int skip = totalWaysUtil(N, start + 1, dp);
-        int m = (int) 1e9+7;
-        dp[start] = ((pick % m) + (skip % m))%m;
+        int m = (int) 1e9 + 7;
+        dp[start] = ((pick % m) + (skip % m)) % m;
         return dp[start];
     }
 
@@ -343,6 +343,46 @@ public class Dp1D {
 
     int numberSequence(int m, int n) {
         return numberSequenceUtil(m, n, 1);
+    }
+
+    private boolean inValidCell(int x, int y, int n) {
+        return x == n || y == n;
+    }
+    long numberOfPathUtil(int x, int y, int k, int[][] arr, int n, long[][][] dp) {
+
+        // if arrived at destination
+        if (x == n - 1 && y == n - 1 && k == arr[x][y]) {
+            return 1;
+        }
+
+        if (inValidCell(x, y, n)) {
+            return 0;
+        }
+
+        // if amount which i have is greater
+        if (arr[x][y] > k) {
+            return 0;
+        }
+
+        if (dp[x][y][k] != -1) {
+            return dp[x][y][k];
+        }
+
+        // if I accept the cell
+        long a = numberOfPathUtil(x + 1, y, k - arr[x][y], arr, n, dp);
+        long b = numberOfPathUtil(x, y + 1, k - arr[x][y], arr, n, dp);
+
+        return dp[x][y][k] = a + b;
+    }
+
+
+
+    long numberOfPath(int n, int k, int[][] arr) {
+        long[][][] dp = new long[n][n][k + 1];
+        for (long[][] matrix : dp)
+            for (long[] row : matrix)
+                Arrays.fill(row, -1);
+        return numberOfPathUtil(0, 0, k, arr, n, dp);
     }
 
     public static void main(String[] args) {
