@@ -64,20 +64,23 @@ public class KadaneAlgo {
     }
 
     public int kadaneAlgo3(int[] input) {
-        int n = input.length;
         int globalMaxSum = Integer.MIN_VALUE;
         int localMaxSum = 0;
-        int[] arr1 = new int[5];
 
-
-        for (int i = 0; i < n; i++) {
-            localMaxSum = Math.max(input[i], input[i] + localMaxSum);
-            arr1[i] = localMaxSum;
+        for (int j : input) {
+            localMaxSum = Math.max(j, j + localMaxSum);
             if (localMaxSum > globalMaxSum) {
                 globalMaxSum = localMaxSum;
             }
         }
 
         return globalMaxSum;
+    }
+
+    public static void main(String[] args) {
+        KadaneAlgo kadaneAlgo = new KadaneAlgo();
+        int[] arr = {-10};
+        int i = kadaneAlgo.kadaneAlgo3(arr);
+        System.out.println("i = " + i);
     }
 }

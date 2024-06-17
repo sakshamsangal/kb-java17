@@ -1,7 +1,6 @@
 package com.app.dsa.part2.dp;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Dp1D {
 
@@ -383,6 +382,29 @@ public class Dp1D {
             for (long[] row : matrix)
                 Arrays.fill(row, -1);
         return numberOfPathUtil(0, 0, k, arr, n, dp);
+    }
+
+    public void powerSet(String prev, String str, int lo, List<String> list) {
+
+        Set<String> set = new HashSet<>();
+        for (int i = lo; i < str.length(); i++) {
+            String ss = prev + str.charAt(i);
+
+            if (!set.contains(ss)) {
+                set.add(ss);
+                System.out.println(ss);
+                list.add(ss);
+                powerSet(ss, str, i + 1, list);
+            }
+        }
+    }
+
+    public List<String> AllPossibleStrings(String s) {
+        // Code here
+        List<String> list = new ArrayList<>();
+        powerSet("", s, 0, list);
+        Collections.sort(list);
+        return list;
     }
 
     public static void main(String[] args) {
