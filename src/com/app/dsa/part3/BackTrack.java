@@ -5,8 +5,6 @@ import java.util.ArrayList;
 public class BackTrack {
 
     static ArrayList<ArrayList<Integer>> validCombinations = new ArrayList<>();
-
-
     private static void boardToList(boolean[][] board) {
         ArrayList<Integer> queenAtRows = new ArrayList<>();
         for (boolean[] row : board) {

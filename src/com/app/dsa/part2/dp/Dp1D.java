@@ -344,6 +344,46 @@ public class Dp1D {
         return numberSequenceUtil(m, n, 1);
     }
 
+    private boolean inValidCell(int x, int y, int n) {
+        return x == n || y == n;
+    }
+    long numberOfPathUtil(int x, int y, int k, int[][] arr, int n, long[][][] dp) {
+
+        // if arrived at destination
+        if (x == n - 1 && y == n - 1 && k == arr[x][y]) {
+            return 1;
+        }
+
+        if (inValidCell(x, y, n)) {
+            return 0;
+        }
+
+        // if amount which i have is greater
+        if (arr[x][y] > k) {
+            return 0;
+        }
+
+        if (dp[x][y][k] != -1) {
+            return dp[x][y][k];
+        }
+
+        // if I accept the cell
+        long a = numberOfPathUtil(x + 1, y, k - arr[x][y], arr, n, dp);
+        long b = numberOfPathUtil(x, y + 1, k - arr[x][y], arr, n, dp);
+
+        return dp[x][y][k] = a + b;
+    }
+
+
+
+    long numberOfPath(int n, int k, int[][] arr) {
+        long[][][] dp = new long[n][n][k + 1];
+        for (long[][] matrix : dp)
+            for (long[] row : matrix)
+                Arrays.fill(row, -1);
+        return numberOfPathUtil(0, 0, k, arr, n, dp);
+    }
+
     public void powerSet(String prev, String str, int lo, List<String> list) {
 
         Set<String> set = new HashSet<>();
@@ -369,7 +409,15 @@ public class Dp1D {
 
     public static void main(String[] args) {
         Dp1D dp1D = new Dp1D();
-        dp1D.AllPossibleStrings("aa");
+        int[] arr = {1, 2, 3};
+
+        int[] values = {2, 2, 3};
+        int[] weight = {4, 5, 1};
+        int i = dp1D.numberSequence(5, 2);
+        System.out.println("i = " + i);
+
+//        int i = dpDsa.knapSack(4, weight, values, weight.length);
+
     }
 
 
