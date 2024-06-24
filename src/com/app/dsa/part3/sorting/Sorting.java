@@ -1,4 +1,4 @@
-package com.app.dsa.part3;
+package com.app.dsa.part3.sorting;
 
 import java.util.*;
 

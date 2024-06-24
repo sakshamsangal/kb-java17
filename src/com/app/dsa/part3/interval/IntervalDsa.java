@@ -1,4 +1,4 @@
-package com.app.dsa.part3;
+package com.app.dsa.part3.interval;
 
 import java.util.ArrayList;
 import java.util.Arrays;

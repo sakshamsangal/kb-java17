@@ -1,4 +1,4 @@
-package com.app.dsa.part3;
+package com.app.dsa.part3.map_dsa;
 
 import java.util.*;
 

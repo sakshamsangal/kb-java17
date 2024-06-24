@@ -4,13 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UndGraph {
-    public List<List<Integer>> adj;
+public class UndGraphGfg {
+    public ArrayList<ArrayList<Integer>> adj;
     public int size;
+    public int timer;
     public boolean[] vis;
-    public List<Integer> nodes;
-    public UndGraph(int size) {
+    public boolean[] ap;
+    public int[] dis;
+    public int[] low;
+    public ArrayList<Integer> nodes;
+
+    public UndGraphGfg(int size) {
         vis = new boolean[size];
+        ap = new boolean[size];
+        dis = new int[size];
+        low = new int[size];
         nodes = new ArrayList<>(size);
 
         this.size = size;

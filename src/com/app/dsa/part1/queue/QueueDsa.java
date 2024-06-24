@@ -1,4 +1,4 @@
-package com.app.dsa.part3;
+package com.app.dsa.part1.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;
