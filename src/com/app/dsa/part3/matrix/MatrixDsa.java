@@ -1,4 +1,4 @@
-package com.app.dsa.part1;
+package com.app.dsa.part3.matrix;
 
 import java.util.ArrayList;
 import java.util.HashSet;

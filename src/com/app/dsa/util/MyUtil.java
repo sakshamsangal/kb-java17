@@ -9,6 +9,16 @@ public class MyUtil {
         b = temp;
     }
 
+    void reverse(int[] nums, int start) {
+        int i = start;
+        int j = nums.length - 1;
+        while (i < j) {
+            swapArrItem(nums, i, j);
+            i++;
+            j--;
+        }
+    }
+
     public static void swapArrItem(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];

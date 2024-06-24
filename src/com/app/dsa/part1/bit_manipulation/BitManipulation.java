@@ -1,4 +1,4 @@
-package com.app.dsa.part1;
+package com.app.dsa.part1.bit_manipulation;
 
 public class BitManipulation {
 

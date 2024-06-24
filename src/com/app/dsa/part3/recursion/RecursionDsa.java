@@ -1,4 +1,4 @@
-package com.app.dsa.part1;
+package com.app.dsa.part3.recursion;
 
 public class RecursionDsa {
 
