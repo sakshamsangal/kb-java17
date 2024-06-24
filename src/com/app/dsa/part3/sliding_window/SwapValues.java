@@ -21,35 +21,29 @@ public class SwapValues {
             return -1;
         }
 
+        sum = Math.abs(sum);
+        int half = sum / 2;
+        Set<Long> set = new HashSet<>();
         if (sum < 0) {
-            sum = Math.abs(sum);
-            int half = sum / 2;
-            Set<Long> set = new HashSet<>();
-            for (int i = 0; i < m; i++) {
-                set.add(b[i]);
+            for (long l : b) {
+                set.add(l);
             }
-            for (int i = 0; i < n; i++) {
-                if (a[i] < half) {
-                    if (set.contains(sum - a[i])) {
-                        return 1;
-                    }
+            for (long l : a) {
+                if (l < half && set.contains(sum - l)) {
+                    return 1;
+
                 }
             }
-        } else if (sum > 0) {
-            sum = Math.abs(sum);
-            int half = sum / 2;
-            Set<Long> set = new HashSet<>();
-            for (int i = 0; i < n; i++) {
-                set.add(a[i]);
+        } else {
+            for (long l : a) {
+                set.add(l);
             }
-            for (int i = 0; i < m; i++) {
-                if (b[i] < half) {
-                    if (set.contains(sum - b[i])) {
-                        return 1;
-                    }
+            for (long l : b) {
+                if (l < half && set.contains(sum - l)) {
+                    return 1;
                 }
             }
         }
-        return 0;
+        return -1;
     }
 }
