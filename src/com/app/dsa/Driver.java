@@ -1,4 +1,4 @@
-package com.app;
+package com.app.dsa;
 
 public class Driver {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.app.dsa.part2.dp;
+package com.app.dsa.part2.dp_2d;
 
 import java.util.Stack;
 

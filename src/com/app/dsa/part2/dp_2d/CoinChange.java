@@ -1,4 +1,4 @@
-package com.app.dsa.part2.dp;// Recursive JAVA program for
+package com.app.dsa.part2.dp_2d;// Recursive JAVA program for
 // coin change problem.
 
 import java.util.Arrays;
