@@ -7,6 +7,30 @@ import java.util.*;
 
 public class ArrayDsa {
 
+    public boolean canSplit(int arr[]) {
+
+        int sum = 0;
+        for (int item : arr) {
+            sum += item;
+        }
+        if (sum % 2 == 1) {
+            return false;
+        }
+
+        int target = sum / 2;
+
+        sum = 0;
+        for (int item : arr) {
+            sum += item;
+            if (sum == target) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 
     public int maxProfit(int[] prices) {
 
