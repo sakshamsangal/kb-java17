@@ -1,4 +1,4 @@
-package com.app.dp.TemplatePattern.src.com.globalsoftwaresupport;
+package com.app.dp.template_pattern;
 
 public class App {
 
@@ -6,7 +6,7 @@ public class App {
 		
 		int[] nums = {1, 5, 3, -2, 10, 12, 8, 6, 5};
 		
-		Algorithm sorting = new SelectionSort(nums);
+		Algorithm sorting = new InsertionSort(nums);
 		sorting.sort();
 		
 	}

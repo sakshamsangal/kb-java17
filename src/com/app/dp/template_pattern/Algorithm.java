@@ -1,4 +1,4 @@
-package com.app.dp.TemplatePattern.src.com.globalsoftwaresupport;
+package com.app.dp.template_pattern;
 
 public abstract class Algorithm {
 
