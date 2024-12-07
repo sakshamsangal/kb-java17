@@ -7,6 +7,12 @@ import java.util.*;
 
 public class ArrayDsa {
 
+    // Function to count inversions in the array.
+    static int inversionCount(int[] arr) {
+        
+        return 0;
+    }
+
     public boolean canSplit(int arr[]) {
 
         int sum = 0;

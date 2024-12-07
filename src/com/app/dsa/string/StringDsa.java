@@ -3,8 +3,7 @@ package com.app.dsa.string;
 import java.util.*;
 
 public class StringDsa {
-
-
+    
     public boolean wordPattern(String pattern, String s) {
 
         String[] arr = s.split("\\s");
@@ -94,30 +93,30 @@ public class StringDsa {
         return true;    // Otherwise return true...
     }
 
-//    public boolean isIsomorphic(String s, String t) {
-//        if (s.length() != t.length()) {
-//            return false;
-//        }
-//
-//        Map<Character, Character> map = new HashMap<>();
-//        HashSet<Character> set = new HashSet<>();
-//
-//        for (int i = 0; i < s.length(); i++) {
-//            if (map.containsKey(s.charAt(i))) {
-//                if (map.get(s.charAt(i)) != t.charAt(i)) {
-//                    return false;
-//                }
-//            } else {
-//                if (set.contains(t.charAt(i))){
-//                    return false;
-//                }
-//                set.add(t.charAt(i));
-//                map.put(s.charAt(i), t.charAt(i));
-//            }
-//
-//        }
-//        return true;
-//    }
+    //    public boolean isIsomorphic(String s, String t) {
+    //        if (s.length() != t.length()) {
+    //            return false;
+    //        }
+    //
+    //        Map<Character, Character> map = new HashMap<>();
+    //        HashSet<Character> set = new HashSet<>();
+    //
+    //        for (int i = 0; i < s.length(); i++) {
+    //            if (map.containsKey(s.charAt(i))) {
+    //                if (map.get(s.charAt(i)) != t.charAt(i)) {
+    //                    return false;
+    //                }
+    //            } else {
+    //                if (set.contains(t.charAt(i))){
+    //                    return false;
+    //                }
+    //                set.add(t.charAt(i));
+    //                map.put(s.charAt(i), t.charAt(i));
+    //            }
+    //
+    //        }
+    //        return true;
+    //    }
 
     public boolean canConstruct(String ransomNote, String magazine) {
         // letter occurrence
