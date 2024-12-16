@@ -1,4 +1,4 @@
-package com.app.dsa.part1.sorting;
+package com.app.dsa.part1.array;
 
 public class Inversion {
 

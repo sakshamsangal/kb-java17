@@ -129,7 +129,9 @@ public class NumberTheory {
 
     public static void main(String[] args) {
         NumberTheory numberTheory = new NumberTheory();
-        int i = countSetBits(10);
-        System.out.println("i = " + i);
+        double v = numberTheory.binaryExp(2, 1);
+        System.out.println("v = " + v);
+        // int i = countSetBits(10);
+        // System.out.println("i = " + i);
     }
 }
